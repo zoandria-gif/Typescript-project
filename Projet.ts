@@ -1,5 +1,5 @@
 import express from "express";
-import { pool } from "./db.ts";/*importation de la variable pool depuis le fichier db.ts*/
+import { pool } from "./Repository/db.ts";/*importation de la variable pool depuis le fichier db.ts*/
 
 const app = express();/*App typé-name*/
 const port = 3000;
