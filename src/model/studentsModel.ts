@@ -10,6 +10,6 @@ export class student {
     this.firstName = firstName;
     this.lastName = lastName;
     this.number = number;
-    this.password = password; // Initialize password as an empty string
+    this.password = password; 
   }
 }
