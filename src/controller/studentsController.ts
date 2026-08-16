@@ -24,3 +24,18 @@ export async function getStudentsById(req: Request, res: Response) {
     res.status(500).json({ error: "Error occurred while fetching student" });
   }
 }
+
+export async function loginStudent(req: Request, res: Response) {
+  const { number, password } = req.body;
+  try {
+    const result = await studentsService.loginStudent(number, password);
+    res.json(result);
+  } catch (error) {
+    console.error("Error during login:", error);
+    if (error instanceof Error) {
+      res.status(401).json({ message: error.message });
+    } else {
+      res.status(401).json({ message: "Login failed" });
+    }
+  }
+}

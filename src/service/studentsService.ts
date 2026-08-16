@@ -14,7 +14,8 @@ export async function loginStudent(number: string, password: string) {
   if (!student) {
     throw new Error("Student not found");
   }
-// Compare the provided password with the stored password
+
+
   if (student.password !== password) {
     throw new Error("Invalid password");
   }
