@@ -1,4 +1,4 @@
-import { Pool } from "./node_modules/@types/pg/index.js";//pool: gère les connections vers Postgres/fournie par le module pg
+import { Pool } from "pg";//pool: gère les connections vers Postgres/fournie par le module pg
 import "dotenv/config";//import pour effet de bord, dotenv va lire le fichier .env et charger les variables d'environnement dans process.env
                         // toutes les variables de .env sont accessibles via "process.env.VARIABLE_NAME"
 
