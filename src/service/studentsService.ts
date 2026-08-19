@@ -1,5 +1,5 @@
-import * as studentsRepository from "../Repository/studentsRepository.js";// import récupération étudiantsRepository pour utiliser les fonctions findAll et findById
-import { generateToken } from "../utils/jwt.js";// import récupération utils/jwt pour utiliser la fonction generateToken
+import * as studentsRepository from "../Repository/studentsRepository.ts";// import récupération étudiantsRepository pour utiliser les fonctions findAll et findById
+import { generateToken } from "../utils/jwt.ts";// import récupération utils/jwt pour utiliser la fonction generateToken
 
 export async function getAllStudents() {
   return await studentsRepository.findAll();
