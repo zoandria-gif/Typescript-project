@@ -1,6 +1,8 @@
 import express from "express";
 import * as studentsController from "./src/controller/studentsController.ts"
+import * as adminController from "./src/controller/adminController.ts"
 import { authMiddleware } from "./src/middleware/authMiddleware.ts";
+import { adminMiddleware } from "./src/middleware/adminMiddleware.ts";
 import cors from "cors";
 
 const app = express();/*App typé-name*/
@@ -10,8 +12,10 @@ const port = 3000;
 
 app.get("/students",authMiddleware, studentsController.getAllStudents);
 app.get("/students/:id", authMiddleware, studentsController.getStudentsById);
+app.post("/students", authMiddleware, adminMiddleware, studentsController.createStudent);
 
 app.post("/students/login", studentsController.loginStudent);
+app.post("/admins/login", adminController.loginAdmin);
 
 
 app.listen(port, () => {

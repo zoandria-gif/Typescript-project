@@ -22,3 +22,7 @@ export async function loginStudent(number: string, password: string) {
   const token = generateToken(student.id);
   return { token };
 }
+
+export async function createStudent(firstName: string, lastName: string, number: string, password: string) {
+  return await studentsRepository.createStudent(firstName, lastName, number, password);
+}

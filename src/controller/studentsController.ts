@@ -39,3 +39,13 @@ export async function loginStudent(req: Request, res: Response) {
     }
   }
 }
+export async function createStudent(req: Request, res: Response) {
+  const { firstName, lastName, number, password } = req.body;
+  try {
+    const newStudent = await studentsService.createStudent(firstName, lastName, number, password);
+    res.status(201).json(newStudent);
+  } catch (error) {
+    console.error("Error creating student:", error);
+    res.status(500).json({ error: "Error occurred while creating student" });
+  }
+}
